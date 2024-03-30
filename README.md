@@ -1,7 +1,6 @@
 # Automatic Light Controller using LDR and Arduino UNO controller.
 
 ##  AIM:
-
 To design and simulate automatic light controller using LDR and Arduino UNO controller in proteus.
 
 ## Software required:
@@ -9,6 +8,7 @@ Arduino IDE </br>
 Proteous
 
 ## PROCEDURE:
+
 ### Arduino IDE
 Step1:Open the Arduino IDE </br>
 Step2: Go to file and select new file option </br>
@@ -38,35 +38,56 @@ To measure the resistance of an LDR and calculate the intensity of light, we can
 
 ### Relay
 In this experiment a relay is used to provide isolation between low-voltage circuitry and high-voltage circuitry. Arduino is also used to provide a control signal to the relay whenever the intensity of light falls below a certain level. The control signal is generated from pin 13 of Arduino, which is used as an output pin
+
 ### Light Sensor with Arduino
 The circuit diagram shown in the image represents a light sensor and street light control system using Arduino. Let’s break down the components and their functions:
 1.	Arduino UNO R3: The Arduino UNO R3 board serves as the main microcontroller in this project. It receives input from the light sensor and controls the street lights based on the detected light intensity.
 2.	Light Dependent Resistor (LDR): The LDR is a sensor that detects changes in the intensity of light. It is connected in series with a 10K ohm resistor and a 5-volt power supply. The resistance of the LDR varies with the intensity of light falling upon it.
 3.	Analog-to-Digital Converter (ADC): The Arduino UNO R3 board has six ADC channels that can measure voltage. In this project, the measured voltage across the LDR is converted into a corresponding resistance value using a voltage divider circuit. This resistance value is then converted into a digital value by the ADC for further processing.
 4.	Relay: The relay is used to provide isolation between the low-voltage circuitry (Arduino) and the high-voltage circuitry (street lights). It acts as a switch that is controlled by the Arduino. When the light intensity falls below a certain level, the Arduino sends a control signal to the relay, which then switches on or off the street lights accordingly.
-
  ![image](https://github.com/anishkumar-Embedded/Automatic-Light-control-using-Arduino-Controller/assets/71547910/9cc7f0aa-0cfc-46a2-87ff-de5d31221c0a)
-
-
 Overall, this circuit diagram showcases how the Arduino, LDR, ADC, relay, and transistor are interconnected to create a light sensor and street light control system. The Arduino reads the resistance value of the LDR, converts it into a digital value, and based on that, controls the street lights using the relay.
-
-
-
-
-
-
-
-
 LDR Features of LDR are as follows: 
+1. High reliability.
 
-1. High reliability. 2. Light weight. 3. Wide spectral response. 4. Wide ambient temperature range.
+2. Light weight.
 
+3. Wide spectral response.
+
+4.Wide ambient temperature range.
 
 ## PROGRAM:
-
+```
+int sensorPin = A0; 
+int sensorValue = 0; 
+void setup() 
+{
+Serial.begin(9600); 
+pinMode(13, OUTPUT);
+}
+void loop() 
+{
+  sensorValue = analogRead(sensorPin);
+  Serial.print("OUTPUT:");
+  Serial.println(sensorValue); 
+  delay(500);
+  if(sensorValue<=400)
+  {
+  digitalWrite(13, HIGH);  
+  delay(500);
+  }
+  else
+  {
+  digitalWrite(13, LOW);  
+  delay(500);
+  }
+}
+```
 ## CIRCUIT DIAGRAM:
+![image](https://github.com/Yuvaranithulasingam/Automatic-Light-control-using-Arduino-Controller/assets/121418522/7d6d71a2-237c-4bf1-9203-bc01b3f13600)
 
 ## OUTPUT:
+![image](https://github.com/Yuvaranithulasingam/Automatic-Light-control-using-Arduino-Controller/assets/121418522/c1f93fdf-30d6-4f85-9628-53fe1d311d7f)
 
 ## RESULT:
 Thus the automatic light controller was designed and simulated using LDR and Arduino UNO controller.
