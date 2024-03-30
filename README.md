@@ -83,10 +83,13 @@ void loop()
   }
 }
 ```
+
 ## CIRCUIT DIAGRAM:
+
 ![image](https://github.com/Yuvaranithulasingam/Automatic-Light-control-using-Arduino-Controller/assets/121418522/7d6d71a2-237c-4bf1-9203-bc01b3f13600)
 
 ## OUTPUT:
+
 ![image](https://github.com/Yuvaranithulasingam/Automatic-Light-control-using-Arduino-Controller/assets/121418522/c1f93fdf-30d6-4f85-9628-53fe1d311d7f)
 
 ## RESULT:
